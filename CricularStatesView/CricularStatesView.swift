@@ -27,12 +27,26 @@ public class CricularStatesView: UIView {
             self.setNeedsDisplay()
         }
     }
+    
+    public var circleBorderWidth: CGFloat = 1 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
     public var seperatorLength: CGFloat = 10 {
         didSet {
             self.setNeedsDisplay()
         }
     }
-    public var borderWidth: CGFloat = 1 {
+    
+    public var seperatorColor = UIColor.grayColor() {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    public var seperatorWidth: CGFloat = 1 {
         didSet {
             self.setNeedsDisplay()
         }
@@ -53,18 +67,25 @@ public class CricularStatesView: UIView {
         
         print("Bounds: \(self.bounds)")
         
-        self.circleColor.setFill()
-        self.circleBorderColor.setStroke()
-        
-        var offset: CGFloat = self.margin
         for index in 0..<self.numberOfStates {
             let centerX = self.margin + self.radius
-            let centerY = self.radius + offset
-            let pathToFill = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.borderWidth)
-            pathToFill.fill()
-            pathToFill.stroke()
+            let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
+            let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
-            offset += self.diameter + self.seperatorLength
+            self.circleColor.setFill()
+            self.circleBorderColor.setStroke()
+            circularPath.fill()
+            circularPath.stroke()
+            
+            if index != self.numberOfStates.predecessor() {
+                let linePath = UIBezierPath()
+                linePath.moveToPoint(CGPoint(x: centerX, y: centerY+self.radius))
+                linePath.addLineToPoint(CGPoint(x: centerX, y: centerY+self.radius+self.seperatorLength))
+                linePath.lineWidth = self.seperatorWidth
+                
+                self.seperatorColor.setStroke()
+                linePath.stroke()
+            }
         }
     }
     

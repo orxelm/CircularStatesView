@@ -12,9 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let v = CricularStatesView(frame: self.view.bounds)
-        self.view.addSubview(v)
     }
 }
 
