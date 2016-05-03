@@ -13,7 +13,7 @@
 		79E2AC051CD6294700C5E250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E2AC031CD6294700C5E250 /* Main.storyboard */; };
 		79E2AC071CD6294700C5E250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E2AC061CD6294700C5E250 /* Assets.xcassets */; };
 		79E2AC0A1CD6294700C5E250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E2AC081CD6294700C5E250 /* LaunchScreen.storyboard */; };
-		79E2AC121CD629E700C5E250 /* CricularStatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2AC111CD629E700C5E250 /* CricularStatesView.swift */; };
+		79E2AC121CD629E700C5E250 /* CircularStatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2AC111CD629E700C5E250 /* CircularStatesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		79E2AC061CD6294700C5E250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79E2AC091CD6294700C5E250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79E2AC0B1CD6294700C5E250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79E2AC111CD629E700C5E250 /* CricularStatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CricularStatesView.swift; path = ../../CricularStatesView/CricularStatesView.swift; sourceTree = "<group>"; };
+		79E2AC111CD629E700C5E250 /* CircularStatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularStatesView.swift; path = ../../CricularStatesView/CircularStatesView.swift; sourceTree = "<group>"; };
 		C142C9E8801D4A967276F2CE /* Pods-CricularStatesView-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricularStatesView-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,15 +80,39 @@
 		79E2ABFE1CD6294700C5E250 /* CricularStatesView-Example */ = {
 			isa = PBXGroup;
 			children = (
+				79E2AC131CD8A0F800C5E250 /* Classes */,
+				79E2AC151CD8A12900C5E250 /* Storyboards */,
+				79E2AC141CD8A0FF00C5E250 /* Resources */,
+				79E2AC111CD629E700C5E250 /* CircularStatesView.swift */,
+			);
+			path = "CricularStatesView-Example";
+			sourceTree = "<group>";
+		};
+		79E2AC131CD8A0F800C5E250 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
 				79E2ABFF1CD6294700C5E250 /* AppDelegate.swift */,
 				79E2AC011CD6294700C5E250 /* ViewController.swift */,
-				79E2AC031CD6294700C5E250 /* Main.storyboard */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		79E2AC141CD8A0FF00C5E250 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				79E2AC061CD6294700C5E250 /* Assets.xcassets */,
 				79E2AC081CD6294700C5E250 /* LaunchScreen.storyboard */,
 				79E2AC0B1CD6294700C5E250 /* Info.plist */,
-				79E2AC111CD629E700C5E250 /* CricularStatesView.swift */,
 			);
-			path = "CricularStatesView-Example";
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		79E2AC151CD8A12900C5E250 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				79E2AC031CD6294700C5E250 /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +239,7 @@
 			files = (
 				79E2AC021CD6294700C5E250 /* ViewController.swift in Sources */,
 				79E2AC001CD6294700C5E250 /* AppDelegate.swift in Sources */,
-				79E2AC121CD629E700C5E250 /* CricularStatesView.swift in Sources */,
+				79E2AC121CD629E700C5E250 /* CircularStatesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

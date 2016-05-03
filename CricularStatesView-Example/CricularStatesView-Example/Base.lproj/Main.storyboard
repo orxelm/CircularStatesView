@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wdn-p7-7mJ" customClass="CricularStatesView" customModule="CricularStatesView_Example" customModuleProvider="target">
-                                <rect key="frame" x="158" y="155" width="249" height="374"/>
-                                <color key="backgroundColor" red="0.72549019609999998" green="0.047058823530000002" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdn-p7-7mJ" customClass="CircularStatesView" customModule="CricularStatesView_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wdn-p7-7mJ" secondAttribute="bottom" id="9q2-ve-7UD"/>
+                            <constraint firstAttribute="trailing" secondItem="Wdn-p7-7mJ" secondAttribute="trailing" id="OVF-y4-ulq"/>
+                            <constraint firstItem="Wdn-p7-7mJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="30" id="bdm-M5-EfH"/>
+                            <constraint firstItem="Wdn-p7-7mJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="p68-MQ-yyi"/>
+                            <constraint firstItem="Wdn-p7-7mJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zZc-pZ-Qte"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bdm-M5-EfH"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="statesView" destination="Wdn-p7-7mJ" id="MRk-Jf-0wN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="374"/>
+            <point key="canvasLocation" x="686" y="452"/>
         </scene>
     </scenes>
 </document>

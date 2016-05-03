@@ -1,6 +1,6 @@
 //
-//  CricularStatesView.swift
-//  CricularStatesView
+//  CircularStatesView.swift
+//  CircularStatesView
 //
 //  Created by Or Elmaliah on 01/05/2016.
 //  Copyright © 2016 Or Elmaliah. All rights reserved.
@@ -8,45 +8,76 @@
 
 import UIKit
 
-public class CricularStatesView: UIView {
+public protocol CircularStatesViewDataSource: class {
+    func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
+    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
+    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
+}
+
+public class CircularStatesView: UIView {
     
     // MARK: - Properties (Public)
     
+    weak var dataSource: CircularStatesViewDataSource?
+    
+    /// The number of states in view
     public var numberOfStates: Int = 4 {
         didSet {
             self.setNeedsDisplay()
         }
     }
+    
+    /// The circle's fill color
     public var circleColor = UIColor.blackColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
+    
+    /// The circle's border color
     public var circleBorderColor = UIColor.grayColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
+    /// The width of the border
     public var circleBorderWidth: CGFloat = 1 {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
+    /// The length of the seperator line between each circle state
     public var seperatorLength: CGFloat = 10 {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
+    /// The line seperator color
     public var seperatorColor = UIColor.grayColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
+    /// The line seperator width
     public var seperatorWidth: CGFloat = 1 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The states title font
+    public var stateTitleFont = UIFont.systemFontOfSize(17) {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The state title text color
+    public var stateTitleTextColor = UIColor.darkTextColor() {
         didSet {
             self.setNeedsDisplay()
         }
@@ -65,9 +96,8 @@ public class CricularStatesView: UIView {
     public override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        print("Bounds: \(self.bounds)")
-        
         for index in 0..<self.numberOfStates {
+            // State Circle
             let centerX = self.margin + self.radius
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
@@ -77,6 +107,24 @@ public class CricularStatesView: UIView {
             circularPath.fill()
             circularPath.stroke()
             
+            // Image Icon
+            let imageIcon = self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index)
+            let iconWidth = imageIcon?.size.width ?? 0
+            let iconHeight = imageIcon?.size.height ?? 0
+            imageIcon?.drawAtPoint(CGPoint(x: centerX-(iconWidth/2), y: centerY-(iconHeight/2)))
+            
+            // Title Label
+            let titleLabel = UILabel()
+            titleLabel.text = self.dataSource?.cricularStatesView(self, titleForStateAtIndex: index)
+            titleLabel.font = self.stateTitleFont
+            titleLabel.textColor = self.stateTitleTextColor
+            titleLabel.numberOfLines = 0
+            let titleWidth = CGRectGetWidth(self.bounds) - (centerX + self.radius + (2 * self.margin))
+            let titleHeight = self.diameter - (2 * self.margin)
+            titleLabel.frame = CGRect(x: 0, y: 0, width: titleWidth, height: titleHeight)
+            titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleHeight/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
+            
+            // Seperator
             if index != self.numberOfStates.predecessor() {
                 let linePath = UIBezierPath()
                 linePath.moveToPoint(CGPoint(x: centerX, y: centerY+self.radius))
@@ -94,7 +142,7 @@ public class CricularStatesView: UIView {
         self.commonInit()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
     }
