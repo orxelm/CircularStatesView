@@ -103,6 +103,18 @@ public class CircularStatesView: UIView {
     }
     private let margin: CGFloat = 8
     
+    // MARK: - State Indicators (Private)
+    
+    private var frameForRippleView: CGRect?
+    private var rippleView: RippleView?
+    
+    // MARK: - NSObject
+    
+    deinit {
+        self.rippleView?.stopRippleEffect()
+        self.rippleView = nil
+    }
+    
     // MARK: - UIView
     
     public override func drawRect(rect: CGRect) {
@@ -115,8 +127,17 @@ public class CircularStatesView: UIView {
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
-            if self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index) == true {
+            let isActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index)
+            if isActive == true {
                 self.circleActiveColor.setFill()
+                
+                if index < statesCount.predecessor() {
+                    let isNextStateActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index.successor())
+                    if isNextStateActive == false {
+                        self.frameForRippleView = circularPath.bounds
+                        self.updateIndicatorViews()
+                    }
+                }
             }
             else {
                 self.circleInactiveColor.setFill()
@@ -127,7 +148,8 @@ public class CircularStatesView: UIView {
             circularPath.stroke()
             
             // Image Icon
-            if let imageIcon = self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index) {
+            let iconImage = isActive == true ? self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index) : self.dataSource?.cricularStatesView(self, imageIconForInActiveStateAtIndex: index)
+            if let imageIcon = iconImage {
                 let iconWidth = imageIcon.size.width
                 let iconHeight = imageIcon.size.height
                 imageIcon.drawAtPoint(CGPoint(x: centerX-(iconWidth/2), y: centerY-(iconHeight/2)))
@@ -181,7 +203,29 @@ public class CircularStatesView: UIView {
     // MARK: - Public API
     
     public func reloadData() {
+        self.clearIndicatorViews()
         self.setNeedsDisplay()
+    }
+    
+    // MARK: - Indicator Views
+    
+    private func updateIndicatorViews() {
+        if self.rippleView == nil {
+            let rippleView = RippleView()
+            self.addSubview(rippleView)
+            self.rippleView = rippleView
+        }
+        
+        if let frameForRippleView = self.frameForRippleView, rippleView = self.rippleView {
+            rippleView.frame = frameForRippleView
+            rippleView.hidden = false
+            rippleView.startRippleEffect()
+        }
+    }
+    
+    private func clearIndicatorViews() {
+        self.rippleView?.hidden = true
+        self.rippleView?.stopRippleEffect()
     }
     
     // MARK: - Calculations

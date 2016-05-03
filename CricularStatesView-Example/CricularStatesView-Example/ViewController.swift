@@ -84,6 +84,18 @@ extension ViewController: CircularStatesViewDataSource {
     }
     
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage? {
-        return UIImage()
+        let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
+        switch myStatesIndex {
+        case .Awaiting:
+            return UIImage(named: "state_approval_off")
+        case .Packaging:
+            return UIImage(named: "state_in_progress_off")
+        case .OnMyWay:
+            return UIImage(named: "state_otw_off")
+        case .Delivered:
+            return UIImage(named: "state_deliverd_off")
+        case .Unknown:
+            return UIImage()
+        }
     }
 }
