@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum MyStatesEnum: Int {
+    case Awaiting, Packaging, OnMyWay, Delivered, Unknown
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet private weak var statesView: CircularStatesView!
@@ -27,32 +31,38 @@ extension ViewController: CircularStatesViewDataSource {
         return 4
     }
     
+    func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool {
+        return true
+    }
+    
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String? {
-        switch index {
-        case 0:
+        let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
+        switch myStatesIndex {
+        case .Awaiting:
             return "Awaiting Approval"
-        case 1:
+        case .Packaging:
             return "Packaging"
-        case 2:
+        case .OnMyWay:
             return "On My Way"
-        case 3:
+        case .Delivered:
             return "Delivered"
-        default:
+        case .Unknown:
             return ""
         }
     }
     
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage? {
-        switch index {
-        case 0:
+        let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
+        switch myStatesIndex {
+        case .Awaiting:
             return UIImage(named: "state_approval_on")
-        case 1:
+        case .Packaging:
             return UIImage(named: "state_in_progress_on")
-        case 2:
+        case .OnMyWay:
             return UIImage(named: "state_otw_on")
-        case 3:
+        case .Delivered:
             return UIImage(named: "state_deliverd_on")
-        default:
+        case .Unknown:
             return UIImage()
         }
     }

@@ -10,6 +10,7 @@ import UIKit
 
 public protocol CircularStatesViewDataSource: class {
     func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int
+    func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
@@ -24,8 +25,15 @@ public class CircularStatesView: UIView {
     /// The number of states in view
     public private(set) var numberOfStates: Int = 0
     
-    /// The circle's fill color
-    public var circleColor = UIColor.blackColor() {
+    /// The circle's active state fill color
+    public var circleActiveColor = UIColor.blackColor() {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The circle's in-active state fill color
+    public var circleInActiveColor = UIColor.darkGrayColor() {
         didSet {
             self.setNeedsDisplay()
         }
@@ -93,22 +101,24 @@ public class CircularStatesView: UIView {
     public override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        for index in 0..<self.statesCount() {
+        let statesCount = self.statesCount()
+        for index in 0..<statesCount {
             // State Circle
             let centerX = self.margin + self.radius
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
-            self.circleColor.setFill()
+            self.circleActiveColor.setFill()
             self.circleBorderColor.setStroke()
             circularPath.fill()
             circularPath.stroke()
             
             // Image Icon
-            let imageIcon = self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index)
-            let iconWidth = imageIcon?.size.width ?? 0
-            let iconHeight = imageIcon?.size.height ?? 0
-            imageIcon?.drawAtPoint(CGPoint(x: centerX-(iconWidth/2), y: centerY-(iconHeight/2)))
+            if let imageIcon = self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index) {
+                let iconWidth = imageIcon.size.width
+                let iconHeight = imageIcon.size.height
+                imageIcon.drawAtPoint(CGPoint(x: centerX-(iconWidth/2), y: centerY-(iconHeight/2)))
+            }
             
             // Title Label
             let titleLabel = UILabel()
@@ -122,7 +132,7 @@ public class CircularStatesView: UIView {
             titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleHeight/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
             
             // Seperator
-            if index != self.statesCount().predecessor() {
+            if index != statesCount.predecessor() {
                 let linePath = UIBezierPath()
                 linePath.moveToPoint(CGPoint(x: centerX, y: centerY+self.radius))
                 linePath.addLineToPoint(CGPoint(x: centerX, y: centerY+self.radius+self.seperatorLength))
@@ -171,7 +181,11 @@ public class CircularStatesView: UIView {
     }
     
     private func statesCount() -> Int {
-        return self.numberOfStates > 0 ? self.numberOfStates : (self.dataSource?.numberOfStatesInCricularStatesView(self) ?? 0)
+        if self.numberOfStates == 0 {
+            self.numberOfStates = self.dataSource?.numberOfStatesInCricularStatesView(self) ?? 0
+        }
+        
+        return self.numberOfStates
     }
 }
 
