@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7338939CA398CCE3BE517847 /* Pods_CricularStatesView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8E2C5800270D3C7CDC404 /* Pods_CricularStatesView_Example.framework */; };
 		79E2AC001CD6294700C5E250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2ABFF1CD6294700C5E250 /* AppDelegate.swift */; };
 		79E2AC021CD6294700C5E250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2AC011CD6294700C5E250 /* ViewController.swift */; };
 		79E2AC051CD6294700C5E250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E2AC031CD6294700C5E250 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54CD5E762056300C47E1157C /* Pods-CricularStatesView-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricularStatesView-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example.release.xcconfig"; sourceTree = "<group>"; };
+		65E8E2C5800270D3C7CDC404 /* Pods_CricularStatesView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CricularStatesView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E2ABFC1CD6294700C5E250 /* CricularStatesView-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CricularStatesView-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E2ABFF1CD6294700C5E250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79E2AC011CD6294700C5E250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		79E2AC091CD6294700C5E250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79E2AC0B1CD6294700C5E250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79E2AC111CD629E700C5E250 /* CricularStatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CricularStatesView.swift; path = ../../CricularStatesView/CricularStatesView.swift; sourceTree = "<group>"; };
+		C142C9E8801D4A967276F2CE /* Pods-CricularStatesView-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricularStatesView-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7338939CA398CCE3BE517847 /* Pods_CricularStatesView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5F1D5BB0448C246963E84D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E8E2C5800270D3C7CDC404 /* Pods_CricularStatesView_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DDF53EBCE0F5A64657A2AE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C142C9E8801D4A967276F2CE /* Pods-CricularStatesView-Example.debug.xcconfig */,
+				54CD5E762056300C47E1157C /* Pods-CricularStatesView-Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		79E2ABF31CD6294700C5E250 = {
 			isa = PBXGroup;
 			children = (
 				79E2ABFE1CD6294700C5E250 /* CricularStatesView-Example */,
 				79E2ABFD1CD6294700C5E250 /* Products */,
+				2DDF53EBCE0F5A64657A2AE9 /* Pods */,
+				0B5F1D5BB0448C246963E84D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79E2AC0E1CD6294700C5E250 /* Build configuration list for PBXNativeTarget "CricularStatesView-Example" */;
 			buildPhases = (
+				058C4AB613DD82C2C41F2422 /* 📦 Check Pods Manifest.lock */,
 				79E2ABF81CD6294700C5E250 /* Sources */,
 				79E2ABF91CD6294700C5E250 /* Frameworks */,
 				79E2ABFA1CD6294700C5E250 /* Resources */,
+				6F2EC106DF54382E45892005 /* 📦 Embed Pods Frameworks */,
+				5628DFA9E3959015F1B4E813 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		058C4AB613DD82C2C41F2422 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5628DFA9E3959015F1B4E813 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F2EC106DF54382E45892005 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79E2ABF81CD6294700C5E250 /* Sources */ = {
@@ -251,6 +326,7 @@
 		};
 		79E2AC0F1CD6294700C5E250 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C142C9E8801D4A967276F2CE /* Pods-CricularStatesView-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CricularStatesView-Example/Info.plist";
@@ -262,6 +338,7 @@
 		};
 		79E2AC101CD6294700C5E250 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54CD5E762056300C47E1157C /* Pods-CricularStatesView-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CricularStatesView-Example/Info.plist";
@@ -290,6 +367,7 @@
 				79E2AC101CD6294700C5E250 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
