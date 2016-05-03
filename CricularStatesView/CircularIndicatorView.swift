@@ -1,9 +1,9 @@
 //
 //  CircularIndicatorView.swift
-//  Brisk
+//  CircularStatesView
 //
 //  Created by Or Elmaliah on 19/01/2016.
-//  Copyright © 2016 TheNets. All rights reserved.
+//  Copyright © 2016 Or Elmaliah. All rights reserved.
 //
 
 import UIKit

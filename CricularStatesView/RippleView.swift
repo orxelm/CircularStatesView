@@ -1,44 +1,35 @@
 //
 //  RippleView.swift
-//  Brisk
+//  CircularStatesView
 //
 //  Created by Or Elmaliah on 19/01/2016.
-//  Copyright © 2016 TheNets. All rights reserved.
+//  Copyright © 2016 Or Elmaliah. All rights reserved.
 //
 
 import UIKit
 
 class RippleView: UIView {
 
+    var rippleColor = UIColor.blackColor()
     private var timer: NSTimer?
     
-    // MARK: NSObject
+    // MARK: - NSObject
     
     deinit {
         self.stopTimer()
     }
     
-    override func awakeFromNib() {
-        self.layer.cornerRadius = self.frame.size.height / 2
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.whiteColor().CGColor
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    // MARK: - UIView
     
-    // MARK: UIView
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         self.layer.cornerRadius = frame.size.height / 2
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.clearColor().CGColor
     }
     
-    // MARK: Public
+    // MARK: - Public API
     
     func startRippleEffect() {
         self.starTimer()
@@ -48,9 +39,11 @@ class RippleView: UIView {
         self.stopTimer()
     }
     
-    // MARK: Timer
+    // MARK: - Timer
     
     private func starTimer() {
+        guard self.timer == nil else { return }
+
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
@@ -63,7 +56,7 @@ class RippleView: UIView {
         self.fireRipple()
     }
     
-    // MARK: Animation
+    // MARK: - Animation
     
     private func fireRipple() {
         let pathFrame = CGRect(x: -CGRectGetMidX(self.bounds), y: -CGRectGetMidY(self.bounds), width: self.bounds.size.width, height: self.bounds.size.height)
@@ -76,7 +69,7 @@ class RippleView: UIView {
         circleShape.position = shapePosition
         circleShape.fillColor = UIColor.clearColor().CGColor
         circleShape.opacity = 0
-        circleShape.strokeColor = CSS.briskColor().CGColor
+        circleShape.strokeColor = self.rippleColor.CGColor
         circleShape.lineWidth = 0.5
         
         self.layer.addSublayer(circleShape)

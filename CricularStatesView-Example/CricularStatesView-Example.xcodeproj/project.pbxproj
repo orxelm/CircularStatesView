@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7338939CA398CCE3BE517847 /* Pods_CricularStatesView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8E2C5800270D3C7CDC404 /* Pods_CricularStatesView_Example.framework */; };
-		791499951CD8EB51005CF0D1 /* CircularIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791499931CD8EB51005CF0D1 /* CircularIndicatorView.swift */; };
-		791499961CD8EB51005CF0D1 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791499941CD8EB51005CF0D1 /* RippleView.swift */; };
+		7914999A1CD8F997005CF0D1 /* CircularIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791499981CD8F997005CF0D1 /* CircularIndicatorView.swift */; };
+		7914999B1CD8F997005CF0D1 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791499991CD8F997005CF0D1 /* RippleView.swift */; };
 		79E2AC001CD6294700C5E250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2ABFF1CD6294700C5E250 /* AppDelegate.swift */; };
 		79E2AC021CD6294700C5E250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E2AC011CD6294700C5E250 /* ViewController.swift */; };
 		79E2AC051CD6294700C5E250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E2AC031CD6294700C5E250 /* Main.storyboard */; };
@@ -21,8 +21,8 @@
 /* Begin PBXFileReference section */
 		54CD5E762056300C47E1157C /* Pods-CricularStatesView-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricularStatesView-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CricularStatesView-Example/Pods-CricularStatesView-Example.release.xcconfig"; sourceTree = "<group>"; };
 		65E8E2C5800270D3C7CDC404 /* Pods_CricularStatesView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CricularStatesView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		791499931CD8EB51005CF0D1 /* CircularIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularIndicatorView.swift; sourceTree = "<group>"; };
-		791499941CD8EB51005CF0D1 /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleView.swift; sourceTree = "<group>"; };
+		791499981CD8F997005CF0D1 /* CircularIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularIndicatorView.swift; path = ../../CricularStatesView/CircularIndicatorView.swift; sourceTree = "<group>"; };
+		791499991CD8F997005CF0D1 /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RippleView.swift; path = ../../CricularStatesView/RippleView.swift; sourceTree = "<group>"; };
 		79E2ABFC1CD6294700C5E250 /* CricularStatesView-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CricularStatesView-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E2ABFF1CD6294700C5E250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79E2AC011CD6294700C5E250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				79E2AC111CD629E700C5E250 /* CircularStatesView.swift */,
-				791499931CD8EB51005CF0D1 /* CircularIndicatorView.swift */,
-				791499941CD8EB51005CF0D1 /* RippleView.swift */,
+				791499991CD8F997005CF0D1 /* RippleView.swift */,
+				791499981CD8F997005CF0D1 /* CircularIndicatorView.swift */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -251,11 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				791499961CD8EB51005CF0D1 /* RippleView.swift in Sources */,
+				7914999A1CD8F997005CF0D1 /* CircularIndicatorView.swift in Sources */,
+				7914999B1CD8F997005CF0D1 /* RippleView.swift in Sources */,
 				79E2AC021CD6294700C5E250 /* ViewController.swift in Sources */,
 				79E2AC001CD6294700C5E250 /* AppDelegate.swift in Sources */,
 				79E2AC121CD629E700C5E250 /* CircularStatesView.swift in Sources */,
-				791499951CD8EB51005CF0D1 /* CircularIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
