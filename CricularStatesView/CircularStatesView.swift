@@ -212,6 +212,7 @@ public class CircularStatesView: UIView {
     private func updateIndicatorViews() {
         if self.rippleView == nil {
             let rippleView = RippleView()
+            rippleView.rippleColor = self.circleActiveColor
             self.addSubview(rippleView)
             self.rippleView = rippleView
         }
