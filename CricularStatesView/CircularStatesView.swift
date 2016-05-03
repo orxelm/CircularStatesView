@@ -33,7 +33,7 @@ public class CircularStatesView: UIView {
     }
     
     /// The circle's in-active state fill color
-    public var circleInActiveColor = UIColor.darkGrayColor() {
+    public var circleInactiveColor = UIColor.lightGrayColor() {
         didSet {
             self.setNeedsDisplay()
         }
@@ -48,6 +48,13 @@ public class CircularStatesView: UIView {
     
     /// The width of the border
     public var circleBorderWidth: CGFloat = 1 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The maximum value for the circle diameter
+    public var circleMaxSize: CGFloat? {
         didSet {
             self.setNeedsDisplay()
         }
@@ -108,7 +115,13 @@ public class CircularStatesView: UIView {
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
-            self.circleActiveColor.setFill()
+            if self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index) == true {
+                self.circleActiveColor.setFill()
+            }
+            else {
+                self.circleInactiveColor.setFill()
+            }
+            
             self.circleBorderColor.setStroke()
             circularPath.fill()
             circularPath.stroke()
@@ -165,6 +178,12 @@ public class CircularStatesView: UIView {
         self.backgroundColor = UIColor.clearColor()
     }
     
+    // MARK: - Public API
+    
+    public func reloadData() {
+        self.setNeedsDisplay()
+    }
+    
     // MARK: - Calculations
     
     private func calculateCircleDiameter() {
@@ -176,7 +195,7 @@ public class CircularStatesView: UIView {
             let heightWithoutSeperatorsAndMargins = height - (numOfseperators * self.seperatorLength) - 2*self.margin
             let diameter = (heightWithoutSeperatorsAndMargins / count)
             
-            self.diameter = diameter
+            self.diameter = min(diameter, self.circleMaxSize ?? CGFloat.max)
         }
     }
     

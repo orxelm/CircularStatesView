@@ -16,12 +16,28 @@ class ViewController: UIViewController {
 
     @IBOutlet private weak var statesView: CircularStatesView!
     
+    private var myModelState: Int = 0
+    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.statesView.dataSource = self
+        self.statesView.circleMaxSize = 80
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction private func nextButtonPressed(sender: UIButton) {
+        if self.myModelState < MyStatesEnum.Delivered.rawValue {
+            self.myModelState += 1
+        }
+        else {
+            self.myModelState = 0
+        }
+        
+        self.statesView.reloadData()
     }
 }
 
@@ -32,7 +48,7 @@ extension ViewController: CircularStatesViewDataSource {
     }
     
     func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool {
-        return true
+        return index <= self.myModelState
     }
     
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String? {
