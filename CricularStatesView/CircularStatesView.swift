@@ -9,6 +9,7 @@
 import UIKit
 
 public protocol CircularStatesViewDataSource: class {
+    func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
@@ -21,11 +22,7 @@ public class CircularStatesView: UIView {
     weak var dataSource: CircularStatesViewDataSource?
     
     /// The number of states in view
-    public var numberOfStates: Int = 4 {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
+    public private(set) var numberOfStates: Int = 0
     
     /// The circle's fill color
     public var circleColor = UIColor.blackColor() {
@@ -96,7 +93,7 @@ public class CircularStatesView: UIView {
     public override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        for index in 0..<self.numberOfStates {
+        for index in 0..<self.statesCount() {
             // State Circle
             let centerX = self.margin + self.radius
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
@@ -125,7 +122,7 @@ public class CircularStatesView: UIView {
             titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleHeight/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
             
             // Seperator
-            if index != self.numberOfStates.predecessor() {
+            if index != self.statesCount().predecessor() {
                 let linePath = UIBezierPath()
                 linePath.moveToPoint(CGPoint(x: centerX, y: centerY+self.radius))
                 linePath.addLineToPoint(CGPoint(x: centerX, y: centerY+self.radius+self.seperatorLength))
@@ -161,14 +158,20 @@ public class CircularStatesView: UIView {
     // MARK: - Calculations
     
     private func calculateCircleDiameter() {
-        let height = CGRectGetHeight(self.bounds)
-        let count = CGFloat(self.numberOfStates)
-        let numOfseperators = count - 1
-        
-        let heightWithoutSeperatorsAndMargins = height - (numOfseperators * self.seperatorLength) - 2.0 * self.margin
-        let diameter = (heightWithoutSeperatorsAndMargins / count)
-        
-        self.diameter = diameter
+        let count = CGFloat(self.statesCount())
+        if count > 0 {
+            let height = CGRectGetHeight(self.bounds)
+            let numOfseperators = count - 1
+            
+            let heightWithoutSeperatorsAndMargins = height - (numOfseperators * self.seperatorLength) - 2*self.margin
+            let diameter = (heightWithoutSeperatorsAndMargins / count)
+            
+            self.diameter = diameter
+        }
+    }
+    
+    private func statesCount() -> Int {
+        return self.numberOfStates > 0 ? self.numberOfStates : (self.dataSource?.numberOfStatesInCricularStatesView(self) ?? 0)
     }
 }
 

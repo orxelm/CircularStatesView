@@ -23,6 +23,10 @@ class ViewController: UIViewController {
 
 extension ViewController: CircularStatesViewDataSource {
     
+    func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int {
+        return 4
+    }
+    
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String? {
         switch index {
         case 0:
