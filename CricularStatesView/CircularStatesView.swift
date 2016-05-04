@@ -128,11 +128,12 @@ public class CircularStatesView: UIView {
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
             let isActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index)
+            var isNextStateActive = false
             if isActive == true {
                 self.circleActiveColor.setFill()
-                
+            
                 if index < statesCount.predecessor() {
-                    let isNextStateActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index.successor())
+                    isNextStateActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index.successor()) ?? false
                     if isNextStateActive == false {
                         self.frameForRippleView = circularPath.bounds
                         self.updateIndicatorViews()
@@ -173,7 +174,12 @@ public class CircularStatesView: UIView {
                 linePath.addLineToPoint(CGPoint(x: centerX, y: centerY+self.radius+self.seperatorLength))
                 linePath.lineWidth = self.seperatorWidth
                 
-                self.seperatorColor.setStroke()
+                if isNextStateActive {
+                    self.circleActiveColor.setStroke()
+                }
+                else {
+                    self.seperatorColor.setStroke()
+                }
                 linePath.stroke()
             }
         }
@@ -197,7 +203,7 @@ public class CircularStatesView: UIView {
     }
     
     private func commonInit() {
-        self.backgroundColor = UIColor.clearColor()
+        
     }
     
     // MARK: - Public API
