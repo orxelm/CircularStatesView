@@ -95,8 +95,8 @@
 		797369F71CDBE2C900827973 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				797369F81CDBE2D700827973 /* CircularIndicatorView.swift */,
 				797369F91CDBE2D700827973 /* CircularStatesView.swift */,
+				797369F81CDBE2D700827973 /* CircularIndicatorView.swift */,
 				797369FA1CDBE2D700827973 /* RippleView.swift */,
 			);
 			name = External;

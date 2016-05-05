@@ -25,9 +25,6 @@ public class CircularStatesView: UIView {
     /// The number of states in view
     public private(set) var numberOfStates: Int = 0
     
-    /// The index for the state with activity indicator
-    public var indexForStateWithActivityIndicator: Int?
-    
     /// The circle's active state fill color
     public var circleActiveColor = UIColor.blackColor() {
         didSet {
@@ -91,12 +88,25 @@ public class CircularStatesView: UIView {
         }
     }
     
-    /// The state title text color
-    public var stateTitleTextColor = UIColor.darkTextColor() {
+    /// The color for the active title text label
+    public var titleLabelActiveTextColor = UIColor.blackColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
+    
+    /// The color for the inactive title text label
+    public var titleLabelInactiveTextColor = UIColor.lightGrayColor() {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The index for the state with activity indicator
+    public var indexForStateWithActivityIndicator: Int?
+    
+    /// The color for the activity indicator
+    public var stateActivityIndicatorColor = UIColor.whiteColor()
     
     // MARK: - Properties (Private)
     
@@ -171,7 +181,7 @@ public class CircularStatesView: UIView {
             
             // Title Label
             let text = self.dataSource?.cricularStatesView(self, titleForStateAtIndex: index)
-            let titleLabel = self.crateTitleLabelWithText(text)
+            let titleLabel = self.crateTitleLabelWithText(text, active: isActive ?? false)
             titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleLabel.frame.height/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
             
             // Seperator
@@ -213,11 +223,17 @@ public class CircularStatesView: UIView {
         if let frameForIndicatorView = self.frameForIndicatorView {
             if self.indicatorView == nil {
                 let indicatorView = CircularIndicatorView()
+                indicatorView.indicatorColor = self.stateActivityIndicatorColor
                 self.addSubview(indicatorView)
                 self.indicatorView = indicatorView
             }
             
-            self.indicatorView?.frame = frameForIndicatorView
+            var frame = frameForIndicatorView
+            frame.origin.x += self.margin/2
+            frame.origin.y += self.margin/2
+            frame.size.width -= self.margin
+            frame.size.height -= self.margin
+            self.indicatorView?.frame = frame
             self.indicatorView?.hidden = false
         }
         else {
@@ -240,15 +256,17 @@ public class CircularStatesView: UIView {
         self.rippleView?.hidden = true
         self.rippleView?.stopRippleEffect()
         self.indicatorView?.hidden = true
+        self.frameForRippleView = nil
+        self.frameForIndicatorView = nil
     }
     
     // MARK: - Factory
     
-    private func crateTitleLabelWithText(text: String?) -> UILabel {
+    private func crateTitleLabelWithText(text: String?, active: Bool = false) -> UILabel {
         let titleLabel = UILabel()
         titleLabel.text = text
         titleLabel.font = self.stateTitleFont
-        titleLabel.textColor = self.stateTitleTextColor
+        titleLabel.textColor = active ? self.titleLabelActiveTextColor : self.titleLabelInactiveTextColor
         titleLabel.numberOfLines = 0
         let width = CGRectGetWidth(self.bounds)
         let titleMaxWidth = width - (self.diameter + 3*self.margin) // |-| (state_diameter) |-| (title) |-|
