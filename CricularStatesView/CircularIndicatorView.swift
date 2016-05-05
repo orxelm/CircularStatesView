@@ -9,30 +9,20 @@
 import UIKit
 
 class CircularIndicatorView: UIView {
-
-    // MARK: NSObject
     
-    override func awakeFromNib() {
-        self.shapeInit()
-    }
+    // MARK: - UIView
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         self.shapeInit()
     }
     
-    // MARK: UIView
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.shapeInit()
-    }
-    
-    // MARK: Appearence
+    // MARK: - Appearence
     
     private func shapeInit() {
+        self.layer.removeAllAnimations()
+        
         let width = self.bounds.width
         let startAngle = CGFloat(0.8*2*M_PI)
         let endAngle = startAngle + CGFloat(2*M_PI*0.9)
@@ -49,7 +39,7 @@ class CircularIndicatorView: UIView {
         circleShape.path = path.CGPath
         circleShape.frame = frame
         circleShape.fillColor = UIColor.clearColor().CGColor
-        circleShape.strokeColor = UIColor.whiteColor().CGColor
+        circleShape.strokeColor = UIColor.redColor().CGColor
         circleShape.lineWidth = 1
         
         self.layer.addSublayer(circleShape)

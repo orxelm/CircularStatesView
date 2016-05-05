@@ -20,10 +20,13 @@ public class CircularStatesView: UIView {
     
     // MARK: - Properties (Public)
     
-    weak var dataSource: CircularStatesViewDataSource?
+    public weak var dataSource: CircularStatesViewDataSource?
     
     /// The number of states in view
     public private(set) var numberOfStates: Int = 0
+    
+    /// The index for the state with activity indicator
+    public var indexForStateWithActivityIndicator: Int?
     
     /// The circle's active state fill color
     public var circleActiveColor = UIColor.blackColor() {
@@ -106,13 +109,16 @@ public class CircularStatesView: UIView {
     // MARK: - State Indicators (Private)
     
     private var frameForRippleView: CGRect?
+    private var frameForIndicatorView: CGRect?
     private var rippleView: RippleView?
+    private var indicatorView: CircularIndicatorView?
     
     // MARK: - NSObject
     
     deinit {
         self.rippleView?.stopRippleEffect()
         self.rippleView = nil
+        self.indicatorView = nil
     }
     
     // MARK: - UIView
@@ -136,7 +142,13 @@ public class CircularStatesView: UIView {
                 if index < statesCount.predecessor() {
                     isNextStateActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index.successor()) ?? false
                     if isNextStateActive == false {
-                        self.frameForRippleView = circularPath.bounds
+                        if index == self.indexForStateWithActivityIndicator {
+                            self.frameForIndicatorView = circularPath.bounds
+                        }
+                        else {
+                            self.frameForRippleView = circularPath.bounds
+                        }
+                        
                         self.updateIndicatorViews()
                     }
                 }
@@ -198,23 +210,36 @@ public class CircularStatesView: UIView {
     // MARK: - Indicator Views
     
     private func updateIndicatorViews() {
-        if self.rippleView == nil {
-            let rippleView = RippleView()
-            rippleView.rippleColor = self.circleActiveColor
-            self.addSubview(rippleView)
-            self.rippleView = rippleView
+        if let frameForIndicatorView = self.frameForIndicatorView {
+            if self.indicatorView == nil {
+                let indicatorView = CircularIndicatorView()
+                self.addSubview(indicatorView)
+                self.indicatorView = indicatorView
+            }
+            
+            self.indicatorView?.frame = frameForIndicatorView
+            self.indicatorView?.hidden = false
         }
-        
-        if let frameForRippleView = self.frameForRippleView, rippleView = self.rippleView {
-            rippleView.frame = frameForRippleView
-            rippleView.hidden = false
-            rippleView.startRippleEffect()
+        else {
+            if let frameForRippleView = self.frameForRippleView {
+                if self.rippleView == nil {
+                    let rippleView = RippleView()
+                    rippleView.rippleColor = self.circleActiveColor
+                    self.addSubview(rippleView)
+                    self.rippleView = rippleView
+                }
+                
+                self.rippleView?.frame = frameForRippleView
+                self.rippleView?.hidden = false
+                self.rippleView?.startRippleEffect()
+            }
         }
     }
     
     private func clearIndicatorViews() {
         self.rippleView?.hidden = true
         self.rippleView?.stopRippleEffect()
+        self.indicatorView?.hidden = true
     }
     
     // MARK: - Factory

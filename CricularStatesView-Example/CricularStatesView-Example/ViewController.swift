@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         
         self.statesView.backgroundColor = UIColor.whiteColor()
         self.statesView.dataSource = self
+        self.statesView.indexForStateWithActivityIndicator = MyStatesEnum.OnMyWay.rawValue
         self.statesView.circleMaxSize = 80
     }
     
