@@ -1,0 +1,6 @@
+framework module Pods_CircularStatesView_Example {
+  umbrella header "Pods-CircularStatesView-Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

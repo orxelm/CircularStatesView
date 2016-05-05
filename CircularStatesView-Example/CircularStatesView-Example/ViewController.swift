@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CricularStatesView-Example
+//  CircularStatesView-Example
 //
 //  Created by Or Elmaliah on 01/05/2016.
 //  Copyright © 2016 Or Elmaliah. All rights reserved.
@@ -13,7 +13,7 @@ enum MyStatesEnum: Int {
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var statesView: CircularStatesView!
     
     private var myModelState: Int = 0

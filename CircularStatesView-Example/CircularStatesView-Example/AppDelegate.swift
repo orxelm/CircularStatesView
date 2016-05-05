@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CricularStatesView-Example
+//  CircularStatesView-Example
 //
-//  Created by Or Elmaliah on 01/05/2016.
+//  Created by Or Elmaliah on 5.5.2016.
 //  Copyright © 2016 Or Elmaliah. All rights reserved.
 //
 
