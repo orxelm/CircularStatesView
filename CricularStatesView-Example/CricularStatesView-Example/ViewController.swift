@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.statesView.backgroundColor = UIColor.whiteColor()
         self.statesView.dataSource = self
         self.statesView.circleMaxSize = 80
     }

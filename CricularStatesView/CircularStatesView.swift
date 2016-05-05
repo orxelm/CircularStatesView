@@ -123,8 +123,12 @@ public class CircularStatesView: UIView {
         let statesCount = self.statesCount()
         for index in 0..<statesCount {
             // State Circle
+            let height = CGRectGetHeight(self.bounds)
+            let totalMargin = height - (CGFloat(statesCount) * self.diameter + CGFloat(statesCount.predecessor()) * self.seperatorLength)
+            let marginFromTop = totalMargin / 2
+            
             let centerX = self.margin + self.radius
-            let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.margin
+            let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + marginFromTop
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
             let isActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index)
