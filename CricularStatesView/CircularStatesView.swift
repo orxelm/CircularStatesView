@@ -166,10 +166,14 @@ public class CircularStatesView: UIView {
             titleLabel.font = self.stateTitleFont
             titleLabel.textColor = self.stateTitleTextColor
             titleLabel.numberOfLines = 0
-            let titleWidth = CGRectGetWidth(self.bounds) - (centerX + self.radius + (2 * self.margin))
-            let titleHeight = self.diameter - (2 * self.margin)
-            titleLabel.frame = CGRect(x: 0, y: 0, width: titleWidth, height: titleHeight)
-            titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleHeight/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
+            let titleMaxWidth = CGRectGetWidth(self.bounds) - (centerX + self.radius + (2 * self.margin))
+            let titleMaxHeight = self.diameter - (2 * self.margin)
+            let sizeThatFits = titleLabel.sizeThatFits(CGSize(width: titleMaxWidth, height: titleMaxHeight))
+            let titleWidth = min(titleMaxWidth, sizeThatFits.width)
+            let titleHeight = min(titleMaxHeight, sizeThatFits.height)
+            let titleFrame = CGRect(x: 0, y: 0, width: titleWidth, height: titleHeight)
+            titleLabel.frame = titleFrame
+            titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleFrame.height/2), width: titleFrame.width, height: titleFrame.height))
             
             // Seperator
             if index != statesCount.predecessor() {
@@ -184,6 +188,7 @@ public class CircularStatesView: UIView {
                 else {
                     self.seperatorColor.setStroke()
                 }
+                
                 linePath.stroke()
             }
         }
