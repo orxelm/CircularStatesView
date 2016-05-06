@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CircularStatesView
 
 enum MyStatesEnum: Int {
     case Awaiting, Packaging, OnMyWay, Delivered, Unknown

@@ -13,9 +13,6 @@
 		797369EB1CDBE1C200827973 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797369E91CDBE1C200827973 /* Main.storyboard */; };
 		797369ED1CDBE1C200827973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797369EC1CDBE1C200827973 /* Assets.xcassets */; };
 		797369F01CDBE1C200827973 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797369EE1CDBE1C200827973 /* LaunchScreen.storyboard */; };
-		797369FB1CDBE2D700827973 /* CircularIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797369F81CDBE2D700827973 /* CircularIndicatorView.swift */; };
-		797369FC1CDBE2D700827973 /* CircularStatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797369F91CDBE2D700827973 /* CircularStatesView.swift */; };
-		797369FD1CDBE2D700827973 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797369FA1CDBE2D700827973 /* RippleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +25,6 @@
 		797369EC1CDBE1C200827973 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797369EF1CDBE1C200827973 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797369F11CDBE1C200827973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		797369F81CDBE2D700827973 /* CircularIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularIndicatorView.swift; path = ../../CircularStatesView/CircularIndicatorView.swift; sourceTree = "<group>"; };
-		797369F91CDBE2D700827973 /* CircularStatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularStatesView.swift; path = ../../CircularStatesView/CircularStatesView.swift; sourceTree = "<group>"; };
-		797369FA1CDBE2D700827973 /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RippleView.swift; path = ../../CircularStatesView/RippleView.swift; sourceTree = "<group>"; };
 		E35D75EAE8A594FF9510D420 /* Pods-CircularStatesView-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircularStatesView-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircularStatesView-Example/Pods-CircularStatesView-Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,22 +78,11 @@
 		797369E41CDBE1C200827973 /* CircularStatesView-Example */ = {
 			isa = PBXGroup;
 			children = (
-				797369F71CDBE2C900827973 /* External */,
 				797369FE1CDBE2E000827973 /* Classes */,
 				79736A001CDBE30100827973 /* Storyboards */,
 				797369FF1CDBE2EC00827973 /* Resources */,
 			);
 			path = "CircularStatesView-Example";
-			sourceTree = "<group>";
-		};
-		797369F71CDBE2C900827973 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				797369F91CDBE2D700827973 /* CircularStatesView.swift */,
-				797369F81CDBE2D700827973 /* CircularIndicatorView.swift */,
-				797369FA1CDBE2D700827973 /* RippleView.swift */,
-			);
-			name = External;
 			sourceTree = "<group>";
 		};
 		797369FE1CDBE2E000827973 /* Classes */ = {
@@ -251,11 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797369FD1CDBE2D700827973 /* RippleView.swift in Sources */,
 				797369E81CDBE1C200827973 /* ViewController.swift in Sources */,
-				797369FB1CDBE2D700827973 /* CircularIndicatorView.swift in Sources */,
 				797369E61CDBE1C200827973 /* AppDelegate.swift in Sources */,
-				797369FC1CDBE2D700827973 /* CircularStatesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
