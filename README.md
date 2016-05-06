@@ -1,6 +1,6 @@
 # CircularStatesView
 
-![CircularStatesView: Simple states view in Swift](https://raw.githubusercontent.com/orxelm/CircularStatesView/assets/circularstatesview-logo.jpg)
+![CircularStatesView: Simple states view in Swift](https://raw.githubusercontent.com/orxelm/CircularStatesView/master/assets/circularstatesview-logo.jpg)
 
 ## TO-DO
 - [x] Add title labels
