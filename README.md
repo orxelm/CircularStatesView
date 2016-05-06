@@ -4,8 +4,7 @@
 
 CircularStatesView is a custom view written in Swift, which allows you to dispaly a vertical states progress. We used it our Brisk app to show the customer an order process. See the example project.
 ## Demo
-
-!attach gif here!
+![Demo](https://raw.githubusercontent.com/orxelm/CircularStatesView/master/assets/circularstatesview-demo.gif)
 
 ## Requirements
 Swift 2.2+
