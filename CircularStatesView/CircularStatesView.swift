@@ -49,7 +49,6 @@ public protocol CircularStatesViewDataSource: class {
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
 }
 
-@IBDesignable
 public class CircularStatesView: UIView {
     
     // MARK: - Properties (Public)

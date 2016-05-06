@@ -42,6 +42,7 @@ override func viewDidLoad() {
     self.statesView.dataSource = self
     self.statesView.circleMaxSize = 80
     self.statesView.backgroundColor = UIColor.whiteColor()
+    ...
 }
 ```
 
@@ -56,6 +57,7 @@ extension ViewController: CircularStatesViewDataSource {
     func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool {
         return index <= self.myModelState
     }
+    ...
 }
 ```
 
@@ -157,7 +159,11 @@ public protocol CircularStatesViewDataSource: class {
 }
 ```
 
+##Author
+CircularStatesView is owned and maintained by Or Elmaliah. You can follow me on Twitter [@OrElm](https://twitter.com/orelm).
+
 ## TO-DO
+- [ ] Add optional title label to state circle center (set priority to image or title?)
 - [x] Add title labels
 - [x] Add state image icon
 - [x] Center align all container
