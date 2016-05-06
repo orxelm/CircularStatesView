@@ -8,7 +8,7 @@ CircularStatesView is a custom view written in Swift, which allows you to dispal
 !attach gif here!
 
 ## Requirements
-Swift 2+
+Swift 2.2+
 
 ## Installation
 ### CocoaPods (Soon)
@@ -37,16 +37,16 @@ $ pod install
 ## Usage
 Add it as a subview in your Storyboard/Code.
 ```swift
-	override func viewDidLoad() {
-    	super.viewDidLoad()
+override func viewDidLoad() {
+	super.viewDidLoad()
 
-	    self.statesView.dataSource = self
-	    self.statesView.circleMaxSize = 80
-	    self.statesView.backgroundColor = UIColor.whiteColor()
-	}
+    self.statesView.dataSource = self
+    self.statesView.circleMaxSize = 80
+    self.statesView.backgroundColor = UIColor.whiteColor()
+}
 ```
 
-Then use the dataSource protocol
+Then use the CircularStatesViewDataSource protocol
 ```swift
 extension ViewController: CircularStatesViewDataSource {
     
@@ -61,7 +61,52 @@ extension ViewController: CircularStatesViewDataSource {
 ```
 
 ## Properties
+```swift
+// The DataSource
+public weak var dataSource: CircularStatesViewDataSource?
+    
+/// The number of states in view
+public var numberOfStates: Int {get}
 
+/// The circle's active state fill color
+public var circleActiveColor: UIColor
+
+/// The circle's in-active state fill color
+public var circleInactiveColor: UIColor
+
+/// The circle's border color
+public var circleBorderColor: UIColor
+
+/// The width of the border
+public var circleBorderWidth: CGFloat
+
+/// The maximum value for the circle diameter
+public var circleMaxSize: CGFloat?
+
+/// The length of the seperator line between each circle state
+public var seperatorLength: CGFloat
+
+/// The line seperator color
+public var seperatorColor = UIColor.grayColor()
+
+/// The line seperator width
+public var seperatorWidth: CGFloat
+
+/// The states title font
+public var stateTitleFont: UIFont
+
+/// The color for the active title text label
+public var titleLabelActiveTextColor: UIColor
+
+/// The color for the inactive title text label
+public var titleLabelInactiveTextColor: UIColor
+
+/// The index for the state with activity indicator
+public var indexForStateWithActivityIndicator: Int?
+
+/// The color for the activity indicator
+public var stateActivityIndicatorColor: UIColor
+```
 ## Methods
 
 ## Protocol
