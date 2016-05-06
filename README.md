@@ -86,7 +86,7 @@ public var circleMaxSize: CGFloat?
 public var seperatorLength: CGFloat
 
 /// The line seperator color
-public var seperatorColor = UIColor.grayColor()
+public var seperatorColor: UIColor
 
 /// The line seperator width
 public var seperatorWidth: CGFloat
@@ -164,7 +164,7 @@ public protocol CircularStatesViewDataSource: class {
 - [x] Add custom view to circle (e.g activity indicator view)
 - [x] Add ripple effect to states
 - [x] Support Interface Orientations
-- [ ] Support @IBDesignable
+- [x] Support @IBDesignable,@IBInspectable
 - [ ] Finish documentation
 - [ ] Remove debug prints
 - [ ] Support Cocoapods

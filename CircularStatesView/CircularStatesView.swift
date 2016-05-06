@@ -49,6 +49,7 @@ public protocol CircularStatesViewDataSource: class {
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
 }
 
+@IBDesignable
 public class CircularStatesView: UIView {
     
     // MARK: - Properties (Public)
@@ -59,27 +60,31 @@ public class CircularStatesView: UIView {
     public private(set) var numberOfStates: Int = 0
     
     /// The circle's active state fill color
-    public var circleActiveColor = UIColor.blackColor() {
+    @IBInspectable
+    public var circleActiveColor: UIColor = .blackColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The circle's in-active state fill color
-    public var circleInactiveColor = UIColor.lightGrayColor() {
+    @IBInspectable
+    public var circleInactiveColor: UIColor = .lightGrayColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The circle's border color
-    public var circleBorderColor = UIColor.grayColor() {
+    @IBInspectable
+    public var circleBorderColor: UIColor = .grayColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The width of the border
+    @IBInspectable
     public var circleBorderWidth: CGFloat = 1 {
         didSet {
             self.setNeedsDisplay()
@@ -87,6 +92,7 @@ public class CircularStatesView: UIView {
     }
     
     /// The maximum value for the circle diameter
+    @IBInspectable
     public var circleMaxSize: CGFloat? {
         didSet {
             self.setNeedsDisplay()
@@ -94,6 +100,7 @@ public class CircularStatesView: UIView {
     }
     
     /// The length of the seperator line between each circle state
+    @IBInspectable
     public var seperatorLength: CGFloat = 10 {
         didSet {
             self.setNeedsDisplay()
@@ -101,13 +108,15 @@ public class CircularStatesView: UIView {
     }
     
     /// The line seperator color
-    public var seperatorColor = UIColor.grayColor() {
+    @IBInspectable
+    public var seperatorColor: UIColor = .grayColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The line seperator width
+    @IBInspectable
     public var seperatorWidth: CGFloat = 1 {
         didSet {
             self.setNeedsDisplay()
@@ -115,21 +124,24 @@ public class CircularStatesView: UIView {
     }
     
     /// The states title font
-    public var stateTitleFont = UIFont.systemFontOfSize(17) {
+    @IBInspectable
+    public var stateTitleFont: UIFont = .systemFontOfSize(17) {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The color for the active title text label
-    public var titleLabelActiveTextColor = UIColor.blackColor() {
+    @IBInspectable
+    public var titleLabelActiveTextColor: UIColor = .blackColor() {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// The color for the inactive title text label
-    public var titleLabelInactiveTextColor = UIColor.lightGrayColor() {
+    @IBInspectable
+    public var titleLabelInactiveTextColor: UIColor = .lightGrayColor() {
         didSet {
             self.setNeedsDisplay()
         }
@@ -139,7 +151,8 @@ public class CircularStatesView: UIView {
     public var indexForStateWithActivityIndicator: Int?
     
     /// The color for the activity indicator
-    public var stateActivityIndicatorColor = UIColor.whiteColor()
+    @IBInspectable
+    public var stateActivityIndicatorColor: UIColor = .whiteColor()
     
     // MARK: - Properties (Private)
     
