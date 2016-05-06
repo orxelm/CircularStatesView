@@ -11,42 +11,42 @@ import UIKit
 public protocol CircularStatesViewDataSource: class {
     /**
      Return the number of states in the view
-     - parameter cricularStatesView: The CircularStatesView
+     - parameter circularStatesView: The CircularStatesView
      - returns: The number of states
      */
-    func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int
+    func numberOfStatesInCircularStatesView(circularStatesView: CircularStatesView) -> Int
     
     /**
      Return whether the state at index is active or inactive
-     - parameter cricularStatesView: The CircularStatesView
+     - parameter circularStatesView: The CircularStatesView
      - parameter index: The state index
      - returns: true/false for active/inactive state
      */
-    func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool
+    func circularStatesView(circularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool
     
     /**
      Return the title string for the state, this title we'll be displayed along side the state
-     - parameter cricularStatesView: The CircularStatesView
+     - parameter circularStatesView: The CircularStatesView
      - parameter index: The state index
      - returns: title string or nil if you don't need a title for the specific state
      */
-    func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
+    func circularStatesView(circularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
     
     /**
      Return image icon for active state, this icon will be shown in the circle center
-     - parameter cricularStatesView: The CircularStatesView
+     - parameter circularStatesView: The CircularStatesView
      - parameter index: The state index
      - returns: UIImage for the image icon or nil if you don't want to show an icon
      */
-    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
+    func circularStatesView(circularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
     
     /**
      Return image icon for inactive state, this icon will be shown in the circle center
-     - parameter cricularStatesView: The CircularStatesView
+     - parameter circularStatesView: The CircularStatesView
      - parameter index: The state index
      - returns: UIImage for the image icon or nil if you don't want to show an icon
      */
-    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
+    func circularStatesView(circularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
 }
 
 public class CircularStatesView: UIView {
@@ -189,13 +189,13 @@ public class CircularStatesView: UIView {
             let centerY = self.radius + CGFloat(index) * (self.diameter + self.seperatorLength) + self.topMargin()
             let circularPath = UIBezierPath.circlePathWithCenter(CGPoint(x: centerX, y: centerY), diameter: self.diameter, borderWidth: self.circleBorderWidth)
             
-            let isActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index)
+            let isActive = self.dataSource?.circularStatesView(self, isStateActiveAtIndex: index)
             var isNextStateActive = false
             if isActive == true {
                 self.circleActiveColor.setFill()
             
                 if index < statesCount.predecessor() {
-                    isNextStateActive = self.dataSource?.cricularStatesView(self, isStateActiveAtIndex: index.successor()) ?? false
+                    isNextStateActive = self.dataSource?.circularStatesView(self, isStateActiveAtIndex: index.successor()) ?? false
                     if isNextStateActive == false {
                         if index == self.indexForStateWithActivityIndicator {
                             self.frameForIndicatorView = circularPath.bounds
@@ -217,7 +217,7 @@ public class CircularStatesView: UIView {
             circularPath.stroke()
             
             // Image Icon
-            let iconImage = isActive == true ? self.dataSource?.cricularStatesView(self, imageIconForActiveStateAtIndex: index) : self.dataSource?.cricularStatesView(self, imageIconForInActiveStateAtIndex: index)
+            let iconImage = isActive == true ? self.dataSource?.circularStatesView(self, imageIconForActiveStateAtIndex: index) : self.dataSource?.circularStatesView(self, imageIconForInActiveStateAtIndex: index)
             if let imageIcon = iconImage {
                 let iconWidth = imageIcon.size.width
                 let iconHeight = imageIcon.size.height
@@ -225,7 +225,7 @@ public class CircularStatesView: UIView {
             }
             
             // Title Label
-            let text = self.dataSource?.cricularStatesView(self, titleForStateAtIndex: index)
+            let text = self.dataSource?.circularStatesView(self, titleForStateAtIndex: index)
             let titleLabel = self.crateTitleLabelWithText(text, active: isActive ?? false)
             titleLabel.drawTextInRect(CGRect(x: centerX + self.radius + self.margin, y: centerY - (titleLabel.frame.height/2), width: titleLabel.frame.width, height: titleLabel.frame.height))
             
@@ -345,7 +345,7 @@ public class CircularStatesView: UIView {
         
         var maxWidth: CGFloat = 0
         for index in 0..<statesCount {
-            let text = self.dataSource?.cricularStatesView(self, titleForStateAtIndex: index)
+            let text = self.dataSource?.circularStatesView(self, titleForStateAtIndex: index)
             let titleLabel = self.crateTitleLabelWithText(text)
             
             maxWidth = max(maxWidth, titleLabel.frame.width)
@@ -371,7 +371,7 @@ public class CircularStatesView: UIView {
     
     private func statesCount() -> Int {
         if self.numberOfStates == 0 {
-            self.numberOfStates = self.dataSource?.numberOfStatesInCricularStatesView(self) ?? 0
+            self.numberOfStates = self.dataSource?.numberOfStatesInCircularStatesView(self) ?? 0
         }
         
         return self.numberOfStates

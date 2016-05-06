@@ -46,15 +46,15 @@ class ViewController: UIViewController {
 
 extension ViewController: CircularStatesViewDataSource {
     
-    func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int {
+    func numberOfStatesInCircularStatesView(circularStatesView: CircularStatesView) -> Int {
         return 4
     }
     
-    func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool {
+    func circularStatesView(circularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool {
         return index <= self.myModelState
     }
     
-    func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String? {
+    func circularStatesView(circularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String? {
         let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
         switch myStatesIndex {
         case .Awaiting:
@@ -70,7 +70,7 @@ extension ViewController: CircularStatesViewDataSource {
         }
     }
     
-    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage? {
+    func circularStatesView(circularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage? {
         let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
         switch myStatesIndex {
         case .Awaiting:
@@ -86,7 +86,7 @@ extension ViewController: CircularStatesViewDataSource {
         }
     }
     
-    func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage? {
+    func circularStatesView(circularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage? {
         let myStatesIndex = MyStatesEnum(rawValue: index) ?? .Unknown
         switch myStatesIndex {
         case .Awaiting:
