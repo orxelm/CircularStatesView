@@ -9,10 +9,43 @@
 import UIKit
 
 public protocol CircularStatesViewDataSource: class {
+    /**
+     Return the number of states in the view
+     - parameter cricularStatesView: The CircularStatesView
+     - returns: The number of states
+     */
     func numberOfStatesInCricularStatesView(cricularStatesView: CircularStatesView) -> Int
+    
+    /**
+     Return whether the state at index is active or inactive
+     - parameter cricularStatesView: The CircularStatesView
+     - parameter index: The state index
+     - returns: true/false for active/inactive state
+     */
     func cricularStatesView(cricularStatesView: CircularStatesView, isStateActiveAtIndex index: Int) -> Bool
+    
+    /**
+     Return the title string for the state, this title we'll be displayed along side the state
+     - parameter cricularStatesView: The CircularStatesView
+     - parameter index: The state index
+     - returns: title string or nil if you don't need a title for the specific state
+     */
     func cricularStatesView(cricularStatesView: CircularStatesView, titleForStateAtIndex index: Int) -> String?
+    
+    /**
+     Return image icon for active state, this icon will be shown in the circle center
+     - parameter cricularStatesView: The CircularStatesView
+     - parameter index: The state index
+     - returns: UIImage for the image icon or nil if you don't want to show an icon
+     */
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForActiveStateAtIndex index: Int) -> UIImage?
+    
+    /**
+     Return image icon for inactive state, this icon will be shown in the circle center
+     - parameter cricularStatesView: The CircularStatesView
+     - parameter index: The state index
+     - returns: UIImage for the image icon or nil if you don't want to show an icon
+     */
     func cricularStatesView(cricularStatesView: CircularStatesView, imageIconForInActiveStateAtIndex index: Int) -> UIImage?
 }
 
