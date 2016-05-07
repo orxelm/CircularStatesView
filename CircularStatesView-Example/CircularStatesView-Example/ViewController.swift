@@ -24,10 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.statesView.backgroundColor = UIColor.whiteColor()
-        self.statesView.stateActivityIndicatorColor = UIColor.yellowColor()
         self.statesView.dataSource = self
         self.statesView.indexForStateWithActivityIndicator = MyStatesEnum.OnMyWay.rawValue
+        self.statesView.stateActivityIndicatorColor = UIColor.yellowColor()
         self.statesView.circleMaxSize = 80
     }
     

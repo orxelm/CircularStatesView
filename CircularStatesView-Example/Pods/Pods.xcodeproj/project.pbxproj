@@ -154,8 +154,8 @@
 		BCED4048AB08FBB4BF82FCA72CEF61F6 /* CircularStatesView */ = {
 			isa = PBXGroup;
 			children = (
-				6BB4121BD6ED87474D08526EB59126C5 /* CircularIndicatorView.swift */,
 				535DF8FD9B7F9B850E52074778F01F25 /* CircularStatesView.swift */,
+				6BB4121BD6ED87474D08526EB59126C5 /* CircularIndicatorView.swift */,
 				3F60845CA74E72FA030D3F0786957446 /* RippleView.swift */,
 			);
 			path = CircularStatesView;

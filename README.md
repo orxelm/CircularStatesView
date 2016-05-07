@@ -68,7 +68,7 @@ extension ViewController: CircularStatesViewDataSource {
 public weak var dataSource: CircularStatesViewDataSource?
     
 /// The number of states in view
-public var numberOfStates: Int {get}
+public var numberOfStates: Int { get }
 
 /// The circle's active state fill color
 public var circleActiveColor: UIColor
@@ -82,7 +82,10 @@ public var circleBorderColor: UIColor
 /// The width of the border
 public var circleBorderWidth: CGFloat
 
-/// The maximum value for the circle diameter
+/// The circle size (diameter) is calculated using the view height and seperatorLength
+public var circleSize: CGFloat { get }
+
+/// Overrides the circle size calculation with a pre defined max size, min(calculatedSize(), circleMaxSize)
 public var circleMaxSize: CGFloat?
 
 /// The length of the seperator line between each circle state
@@ -173,7 +176,7 @@ CircularStatesView is owned and maintained by Or Elmaliah. You can follow me on 
 - [x] Support Interface Orientations
 - [x] Support @IBDesignable,@IBInspectable
 - [ ] Finish documentation
-- [ ] Remove debug prints
+- [ ] Remove debug pods
 - [x] Support Cocoapods
 
 ## MIT License
