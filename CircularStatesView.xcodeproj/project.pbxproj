@@ -97,8 +97,8 @@
 		792D2F881CDF2CCB00ABA34F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				792D2F891CDF2CD600ABA34F /* CircularIndicatorView.swift */,
 				792D2F8A1CDF2CD600ABA34F /* CircularStatesView.swift */,
+				792D2F891CDF2CD600ABA34F /* CircularIndicatorView.swift */,
 				792D2F8B1CDF2CD600ABA34F /* RippleView.swift */,
 			);
 			name = Sources;
