@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'CircularStatesView-Example' do
 	pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+    pod 'CircularStatesView', :path => '../'
 end

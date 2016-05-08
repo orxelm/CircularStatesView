@@ -47,7 +47,7 @@ class CircularIndicatorView: UIView {
         self.layer.addSublayer(circleShape)
         
         let circleAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        circleAnimation.toValue = NSNumber(double: 1*2*M_PI)
+        circleAnimation.toValue = NSNumber(double: 2*M_PI)
         circleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         circleAnimation.duration = 1.5
         circleAnimation.repeatCount = Float.infinity

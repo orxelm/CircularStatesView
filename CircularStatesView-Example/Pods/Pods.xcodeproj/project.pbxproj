@@ -7,22 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		367CA99B18E344FE42670E7AA28972C8 /* Pods-CircularStatesView-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBD5331E58CB91D5ADC0ED66FE574C9F /* Pods-CircularStatesView-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C1272E6966346987A311B3B0F56B6F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		AF3144DFE4EF5710719E633238E87A6F /* Pods-CircularStatesView-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDA0B02A6542695FC6DAD6FBD3D4386 /* Pods-CircularStatesView-Example-dummy.m */; };
+		246B48409BE3F3010FB4ABB18CFA51D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		265F47011EC91022D48AD244D91CF4FF /* CircularStatesView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 733AA831557FDBCED52AC107CAC30BBC /* CircularStatesView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29B145517E7DA0BC64A8CF59A1FB44A2 /* CircularStatesView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE8348D0A344E8B59FCA54C6FAE38D2 /* CircularStatesView-dummy.m */; };
+		2C5D9258259A87DACFF346EDC86E83C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		597836E7C3435CCE48C2245611CB82D7 /* Pods-CircularStatesView-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDA0B02A6542695FC6DAD6FBD3D4386 /* Pods-CircularStatesView-Example-dummy.m */; };
+		82ED11B00851C60C25F3DB14C55AF5B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		978A8C719687E10AB0A245EFA38E2E17 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60845CA74E72FA030D3F0786957446 /* RippleView.swift */; };
+		C4F6482A913E814B8FD6E790BB89C51E /* Pods-CircularStatesView-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBD5331E58CB91D5ADC0ED66FE574C9F /* Pods-CircularStatesView-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5813D6B4FD046C8E3964BDE10BAB48D /* CircularIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4121BD6ED87474D08526EB59126C5 /* CircularIndicatorView.swift */; };
+		E2338FF18551CD005B0CCDB8581ED2F7 /* CircularStatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535DF8FD9B7F9B850E52074778F01F25 /* CircularStatesView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E14D293C7B1D02C1905D8DB52B8CDF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DCF8358D66BD7B598B8539AC950924B;
+			remoteInfo = CircularStatesView;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		096BAFED53BC42BE3BB8F5CF9C5A2C60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12DFEEB3509D877B6CE65BCE2EEB0562 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "Reveal-Framework-iOS-1.6.2/Reveal.framework"; sourceTree = "<group>"; };
-		23E6C7F8004AF67D94A730A6388C7F7F /* Pods_CircularStatesView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularStatesView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BCD259D9338222EE4C14D218EAEE943 /* Pods_CircularStatesView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularStatesView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F60845CA74E72FA030D3F0786957446 /* RippleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RippleView.swift; sourceTree = "<group>"; };
 		4C6CECCEFC2345767F02988265099D9D /* Pods-CircularStatesView-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularStatesView-Example.release.xcconfig"; sourceTree = "<group>"; };
+		535DF8FD9B7F9B850E52074778F01F25 /* CircularStatesView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CircularStatesView.swift; sourceTree = "<group>"; };
+		53D7235255DCDBFFF4C3001250BDD3D9 /* CircularStatesView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CircularStatesView.xcconfig; sourceTree = "<group>"; };
 		5EDD63F988073D778E1E1DD518D1AF97 /* Pods-CircularStatesView-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CircularStatesView-Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6BB4121BD6ED87474D08526EB59126C5 /* CircularIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CircularIndicatorView.swift; sourceTree = "<group>"; };
 		6E17B77DDDB8FB9D45733F9E4E081B05 /* Pods-CircularStatesView-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CircularStatesView-Example.modulemap"; sourceTree = "<group>"; };
+		733AA831557FDBCED52AC107CAC30BBC /* CircularStatesView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircularStatesView-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A31AD292876D03F1844EA78CE73E8CEC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A38B17E87717D14CE1ED6CAF3F962A6D /* CircularStatesView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CircularStatesView.modulemap; sourceTree = "<group>"; };
 		AE88A7DA851A872D738AF6FC04EF9415 /* Pods-CircularStatesView-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularStatesView-Example-resources.sh"; sourceTree = "<group>"; };
 		B542E4590906EE56234D13B90138390A /* Pods-CircularStatesView-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CircularStatesView-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CEE8348D0A344E8B59FCA54C6FAE38D2 /* CircularStatesView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CircularStatesView-dummy.m"; sourceTree = "<group>"; };
+		D2E5B42788140A614156CE031C970150 /* CircularStatesView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircularStatesView-prefix.pch"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EA26C8EAFE4240CC09D7D4B805F20CFB /* CircularStatesView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircularStatesView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED65329FBD66B7F7CC7036959269E03C /* Pods-CircularStatesView-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularStatesView-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EDDA0B02A6542695FC6DAD6FBD3D4386 /* Pods-CircularStatesView-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CircularStatesView-Example-dummy.m"; sourceTree = "<group>"; };
 		F961179BDDF9464C170571B2CCE707B0 /* Pods-CircularStatesView-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularStatesView-Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -30,11 +58,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F3A243E0250D285DD77FD5F2CE3E7AFA /* Frameworks */ = {
+		7641256ACD8E1D6DDF347FB85DCC2B0A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C1272E6966346987A311B3B0F56B6F9 /* Foundation.framework in Frameworks */,
+				246B48409BE3F3010FB4ABB18CFA51D9 /* Foundation.framework in Frameworks */,
+				82ED11B00851C60C25F3DB14C55AF5B9 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE4251503EA8ECFA634B293CE47B8D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C5D9258259A87DACFF346EDC86E83C3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,21 +104,41 @@
 			path = "Target Support Files/Pods-CircularStatesView-Example";
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
 			);
-			name = iOS;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44453D9EFCAB10301DD9E81394851F19 /* CircularStatesView */ = {
+			isa = PBXGroup;
+			children = (
+				BCED4048AB08FBB4BF82FCA72CEF61F6 /* CircularStatesView */,
+				E543AC8349ACA9EF866F446E0A1671D0 /* Support Files */,
+			);
+			name = CircularStatesView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7B050700D4EE4BAC0B9657F1B9AA6BB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA26C8EAFE4240CC09D7D4B805F20CFB /* CircularStatesView.framework */,
+				1BCD259D9338222EE4C14D218EAEE943 /* Pods_CircularStatesView_Example.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				FDEC67B3C6F31346DA07AF4A8BF566CB /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				C6FF86527080A6ABFC16B69A3DC0DFFB /* Pods */,
-				EEB8D07988B9944CD84C292E602802A0 /* Products */,
+				7B050700D4EE4BAC0B9657F1B9AA6BB5 /* Products */,
 				1C830D43688A28F1ECE8A002E44A25E2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -94,12 +151,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		BCED4048AB08FBB4BF82FCA72CEF61F6 /* CircularStatesView */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				535DF8FD9B7F9B850E52074778F01F25 /* CircularStatesView.swift */,
+				6BB4121BD6ED87474D08526EB59126C5 /* CircularIndicatorView.swift */,
+				3F60845CA74E72FA030D3F0786957446 /* RippleView.swift */,
 			);
-			name = Frameworks;
+			path = CircularStatesView;
 			sourceTree = "<group>";
 		};
 		C6FF86527080A6ABFC16B69A3DC0DFFB /* Pods */ = {
@@ -118,43 +177,92 @@
 			path = "Reveal-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		EEB8D07988B9944CD84C292E602802A0 /* Products */ = {
+		E543AC8349ACA9EF866F446E0A1671D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				23E6C7F8004AF67D94A730A6388C7F7F /* Pods_CircularStatesView_Example.framework */,
+				A38B17E87717D14CE1ED6CAF3F962A6D /* CircularStatesView.modulemap */,
+				53D7235255DCDBFFF4C3001250BDD3D9 /* CircularStatesView.xcconfig */,
+				CEE8348D0A344E8B59FCA54C6FAE38D2 /* CircularStatesView-dummy.m */,
+				D2E5B42788140A614156CE031C970150 /* CircularStatesView-prefix.pch */,
+				733AA831557FDBCED52AC107CAC30BBC /* CircularStatesView-umbrella.h */,
+				096BAFED53BC42BE3BB8F5CF9C5A2C60 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "CircularStatesView-Example/Pods/Target Support Files/CircularStatesView";
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		FDEC67B3C6F31346DA07AF4A8BF566CB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44453D9EFCAB10301DD9E81394851F19 /* CircularStatesView */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3E7687632C9A05227A8A354B819A82FC /* Headers */ = {
+		E7E61133816307C424DC20D530728E1A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				367CA99B18E344FE42670E7AA28972C8 /* Pods-CircularStatesView-Example-umbrella.h in Headers */,
+				C4F6482A913E814B8FD6E790BB89C51E /* Pods-CircularStatesView-Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F900FE9EEFC6656FE73506DA83D22065 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265F47011EC91022D48AD244D91CF4FF /* CircularStatesView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9A667A144DF0CBB9CBD75BB4125C946D /* Pods-CircularStatesView-Example */ = {
+		291B06E5E008041E0A527F9EE0EBEF94 /* Pods-CircularStatesView-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EC70AA60408AC62026B2D6FBC3BF244 /* Build configuration list for PBXNativeTarget "Pods-CircularStatesView-Example" */;
+			buildConfigurationList = 30E439FFF8F87EA5F5EA4A7DA3F62209 /* Build configuration list for PBXNativeTarget "Pods-CircularStatesView-Example" */;
 			buildPhases = (
-				DDBC9CFA3ECF07FF26F72ED810FA35FC /* Sources */,
-				F3A243E0250D285DD77FD5F2CE3E7AFA /* Frameworks */,
-				3E7687632C9A05227A8A354B819A82FC /* Headers */,
+				D9DE708CB5CEF8B7A8AC67A5B0DC89B1 /* Sources */,
+				7FE4251503EA8ECFA634B293CE47B8D8 /* Frameworks */,
+				E7E61133816307C424DC20D530728E1A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18F84B1E5F81B17DCD5FE0CD836B2154 /* PBXTargetDependency */,
+			);
+			name = "Pods-CircularStatesView-Example";
+			productName = "Pods-CircularStatesView-Example";
+			productReference = 1BCD259D9338222EE4C14D218EAEE943 /* Pods_CircularStatesView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5DCF8358D66BD7B598B8539AC950924B /* CircularStatesView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D21A1CBC09E99C6AE51D7150F87501 /* Build configuration list for PBXNativeTarget "CircularStatesView" */;
+			buildPhases = (
+				0C1A5AA15562A3815345D795A5CD9F10 /* Sources */,
+				7641256ACD8E1D6DDF347FB85DCC2B0A /* Frameworks */,
+				F900FE9EEFC6656FE73506DA83D22065 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-CircularStatesView-Example";
-			productName = "Pods-CircularStatesView-Example";
-			productReference = 23E6C7F8004AF67D94A730A6388C7F7F /* Pods_CircularStatesView_Example.framework */;
+			name = CircularStatesView;
+			productName = CircularStatesView;
+			productReference = EA26C8EAFE4240CC09D7D4B805F20CFB /* CircularStatesView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -174,25 +282,46 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = EEB8D07988B9944CD84C292E602802A0 /* Products */;
+			productRefGroup = 7B050700D4EE4BAC0B9657F1B9AA6BB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A667A144DF0CBB9CBD75BB4125C946D /* Pods-CircularStatesView-Example */,
+				5DCF8358D66BD7B598B8539AC950924B /* CircularStatesView */,
+				291B06E5E008041E0A527F9EE0EBEF94 /* Pods-CircularStatesView-Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DDBC9CFA3ECF07FF26F72ED810FA35FC /* Sources */ = {
+		0C1A5AA15562A3815345D795A5CD9F10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF3144DFE4EF5710719E633238E87A6F /* Pods-CircularStatesView-Example-dummy.m in Sources */,
+				C5813D6B4FD046C8E3964BDE10BAB48D /* CircularIndicatorView.swift in Sources */,
+				29B145517E7DA0BC64A8CF59A1FB44A2 /* CircularStatesView-dummy.m in Sources */,
+				E2338FF18551CD005B0CCDB8581ED2F7 /* CircularStatesView.swift in Sources */,
+				978A8C719687E10AB0A245EFA38E2E17 /* RippleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9DE708CB5CEF8B7A8AC67A5B0DC89B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597836E7C3435CCE48C2245611CB82D7 /* Pods-CircularStatesView-Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18F84B1E5F81B17DCD5FE0CD836B2154 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CircularStatesView;
+			target = 5DCF8358D66BD7B598B8539AC950924B /* CircularStatesView */;
+			targetProxy = 3E14D293C7B1D02C1905D8DB52B8CDF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		034014829C1E4434983CF3A690C12017 /* Debug */ = {
@@ -237,40 +366,7 @@
 			};
 			name = Debug;
 		};
-		726D1DF57DB400E45BA2AEB1814ECB4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED65329FBD66B7F7CC7036959269E03C /* Pods-CircularStatesView-Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CircularStatesView-Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CircularStatesView-Example/Pods-CircularStatesView-Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CircularStatesView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		83843BC4172F90709E4E661623814F14 /* Release */ = {
+		07028C39796FC3488483244DBF9FE94E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C6CECCEFC2345767F02988265099D9D /* Pods-CircularStatesView-Example.release.xcconfig */;
 			buildSettings = {
@@ -302,6 +398,99 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		8D18B4424C077D46916484A88DCA08F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53D7235255DCDBFFF4C3001250BDD3D9 /* CircularStatesView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CircularStatesView/CircularStatesView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CircularStatesView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CircularStatesView/CircularStatesView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CircularStatesView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1E2027BFB3D1CE12695767D36747259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED65329FBD66B7F7CC7036959269E03C /* Pods-CircularStatesView-Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CircularStatesView-Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CircularStatesView-Example/Pods-CircularStatesView-Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CircularStatesView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B709263A64593DEEC74ED9D36E471A8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53D7235255DCDBFFF4C3001250BDD3D9 /* CircularStatesView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CircularStatesView/CircularStatesView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CircularStatesView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CircularStatesView/CircularStatesView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CircularStatesView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -353,11 +542,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5EC70AA60408AC62026B2D6FBC3BF244 /* Build configuration list for PBXNativeTarget "Pods-CircularStatesView-Example" */ = {
+		30E439FFF8F87EA5F5EA4A7DA3F62209 /* Build configuration list for PBXNativeTarget "Pods-CircularStatesView-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				726D1DF57DB400E45BA2AEB1814ECB4B /* Debug */,
-				83843BC4172F90709E4E661623814F14 /* Release */,
+				B1E2027BFB3D1CE12695767D36747259 /* Debug */,
+				07028C39796FC3488483244DBF9FE94E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D21A1CBC09E99C6AE51D7150F87501 /* Build configuration list for PBXNativeTarget "CircularStatesView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B709263A64593DEEC74ED9D36E471A8D /* Debug */,
+				8D18B4424C077D46916484A88DCA08F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

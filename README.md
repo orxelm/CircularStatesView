@@ -2,7 +2,8 @@
 
 ![CircularStatesView: Simple states view in Swift](https://raw.githubusercontent.com/orxelm/CircularStatesView/master/assets/circularstatesview-logo.jpg)
 
-CircularStatesView is a custom view written in Swift, which allows you to dispaly a vertical states progress. We used it our Brisk app to show the customer an order process. See the example project.
+A custom view written in Swift that allows you to dispaly a vertical states progress. Real handy when you need to present the user the current state of a progress while showing him the next steps.
+
 ## Demo
 ![Demo](https://raw.githubusercontent.com/orxelm/CircularStatesView/master/assets/circularstatesview-demo.gif)
 
@@ -67,7 +68,7 @@ extension ViewController: CircularStatesViewDataSource {
 public weak var dataSource: CircularStatesViewDataSource?
     
 /// The number of states in view
-public var numberOfStates: Int {get}
+public var numberOfStates: Int { get }
 
 /// The circle's active state fill color
 public var circleActiveColor: UIColor
@@ -81,7 +82,10 @@ public var circleBorderColor: UIColor
 /// The width of the border
 public var circleBorderWidth: CGFloat
 
-/// The maximum value for the circle diameter
+/// The circle size (diameter) is calculated using the view height and seperatorLength
+public var circleSize: CGFloat { get }
+
+/// Overrides the circle size calculation with a pre defined max size, min(calculatedSize(), circleMaxSize)
 public var circleMaxSize: CGFloat?
 
 /// The length of the seperator line between each circle state
@@ -172,5 +176,27 @@ CircularStatesView is owned and maintained by Or Elmaliah. You can follow me on 
 - [x] Support Interface Orientations
 - [x] Support @IBDesignable,@IBInspectable
 - [ ] Finish documentation
-- [ ] Remove debug prints
-- [ ] Support Cocoapods
+- [ ] Remove debug pods
+- [x] Support Cocoapods
+
+## MIT License
+
+Copyright (c) 2016 Or Elmaliah
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

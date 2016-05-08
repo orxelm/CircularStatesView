@@ -90,7 +90,12 @@ public class CircularStatesView: UIView {
         }
     }
     
-    /// The maximum value for the circle diameter
+    /// The circle size (diameter) is calculated using the view height and seperatorLength
+    public var circleSize: CGFloat {
+        return self.diameter
+    }
+    
+    /// Overrides the circle size calculation with a pre defined max size, min(calculatedSize(), circleMaxSize)
     @IBInspectable
     public var circleMaxSize: CGFloat? {
         didSet {
