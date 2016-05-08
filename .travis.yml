@@ -1,4 +1,4 @@
 language: objective-c
 script: 
 - set -o pipefail && xcodebuild test -project CircularStatesView.xcodeproj -scheme CircularStatesViewTests -sdk iphonesimulator9.3 | xcpretty
-- pod lib lint
+# - pod lib lint
