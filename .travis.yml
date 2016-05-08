@@ -1,7 +1,5 @@
 language: objective-c
 osx_image: xcode7.3
-xcode_sdk: iphonesimulator9.3
-script: 
-- xctool test -project CircularStatesView.xcodeproj -scheme CircularStatesViewTests
+script: xctool test -project CircularStatesView.xcodeproj -scheme CircularStatesViewTests -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
 # - set -o pipefail && xcodebuild test -project CircularStatesView.xcodeproj -scheme CircularStatesViewTests -sdk iphonesimulator9.3 | xcpretty
 # - pod lib lint
