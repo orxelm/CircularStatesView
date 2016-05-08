@@ -1,19 +1,16 @@
 PODS:
   - CircularStatesView (1.0)
-  - Reveal-iOS-SDK (1.6.2)
 
 DEPENDENCIES:
   - CircularStatesView (from `../`)
-  - Reveal-iOS-SDK
 
 EXTERNAL SOURCES:
   CircularStatesView:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  CircularStatesView: 9e16193f6020027b5420d98928d382e545d703dd
-  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
+  CircularStatesView: 5c11b049f15d7b5b30a28e2fc13bc36eec6b84b8
 
-PODFILE CHECKSUM: 28bf04a17bb89b754f3cfa347d744aab28e561c4
+PODFILE CHECKSUM: 93d2070cd6883834cb915e1534a6b9110919712a
 
 COCOAPODS: 1.0.0.rc.2
