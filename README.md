@@ -11,7 +11,7 @@ A custom view written in Swift that allows you to dispaly a vertical states prog
 Swift 2.2+
 
 ## Installation
-### CocoaPods (Soon)
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
@@ -175,8 +175,8 @@ CircularStatesView is owned and maintained by Or Elmaliah. You can follow me on 
 - [x] Add ripple effect to states
 - [x] Support Interface Orientations
 - [x] Support @IBDesignable,@IBInspectable
-- [ ] Finish documentation
-- [ ] Remove debug pods
+- [x] Finish documentation
+- [x] Remove debug pods
 - [x] Support Cocoapods
 
 ## MIT License
