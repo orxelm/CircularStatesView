@@ -1,6 +1,6 @@
 # CircularStatesView
 [![CocoaPods](https://img.shields.io/cocoapods/v/CircularStatesView.svg?maxAge=2592000)]()
-[![Travis](https://img.shields.io/orxelm/CircularStatesView.svg?maxAge=2592000)]()
+[![Travis](https://img.shields.io/travis/orxelm/CircularStatesView.svg?maxAge=2592000)]()
 [![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Twitter](https://img.shields.io/badge/Twitter-@orelm-blue.svg?style=flat)](http://twitter.com/OrElm)
 
